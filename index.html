@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><span>HP</span> Car Rent Agency</h1>
+  </header>
+    <div class="container">
+        <h1><span>HP</span> Car Rent Agency</h1>
+        
+        <div class="form-group">
+            <label for="user-type">User Type:</label>
+            <select class="form-control" id="user-type">
+                <option value="customer">Customer</option>
+                <option value="agency">Car Rental Agency</option>
+            </select>
+        </div>
+        <div id="customer-registration-form">
+            <h2>Customer Registration</h2>
+            <form id="register-customer-form" action="index.php" method="post">
+                <div class="form-group">
+                    <label for="customer-name">Name:</label>
+                    <input type="text" class="form-control" id="customer-name" name="customer_name" placeholder="Enter your name">
+                </div>
+                <!-- Add customer-specific fields here -->
+                <div class="form-group">
+                    <label for="customer-email">Email:</label>
+                    <input type="email" class="form-control" id="customer-email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="customer-password">Password:</label>
+                    <input type="password" class="form-control" id="customer-password" name="password" placeholder="Enter your password">
+                </div>
+                <button type="button" class="btn btn-primary" id="register-as-customer"><a href="login.html" style="color: white;">Register as Customer</a></button>
+            </form>
+        </div>
+        <div id="agency-registration-form" style="display: none;">
+            <h2>Car Rental Agency Registration</h2>
+            <form id="register-agency-form">
+                <div class="form-group">
+                    <label for="agency-name">Agency Name:</label>
+                    <input type="text" class="form-control" id="agency-name" name="name" placeholder="Enter agency name">
+                </div>
+                <!-- Add agency-specific fields here -->
+                <div class="form-group">
+                    <label for="agency-email">Email:</label>
+                    <input type="email" class="form-control" id="agency-email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="agency-password">Password:</label>
+                    <input type="password" class="form-control" id="agency-password" name="password" placeholder="Enter your password">
+                </div>
+                    <button type="button" class="btn btn-primary" id="register-as-agency"><a href="login.html" style="color: white;"> Register as Agency</a></button>          
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Car Rental System. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="your-custom-script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head section remains the same as in previous examples) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System</title>
+    <!-- Add Bootstrap CSS here -->
+    <link href="style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><span>HP</span> Car Rent Agency</h1>
+  </header>
+    <div class="container">
+        <h1>Welcome to Car Rental</h1>
+        <div class="form-group">
+            <label for="user-type">User Type:</label>
+            <select class="form-control" id="user-type" name="user-type">
+                <option value="customer">Customer</option>
+                <option value="agency">Car Rental Agency</option>
+            </select>
+        </div>
+
+        <!-- Customer Login Form -->
+        <div id="customer-login-form">
+            <h2>Customer Login</h2>
+            <form id="login-customer-form" action="login.php" method="post">
+                <div class="form-group">
+                    <label for="customer-email">Email:</label>
+                    <input type="email" class="form-control" id="customer-email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="customer-password">Password:</label>
+                    <input type="password" class="form-control" id="customer-password" name="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary"><a href="availcar.html" style="color: white;">Login as Customer</a></button>
+            </form>
+        </div>
+
+        <!-- Car Rental Agency Login Form -->
+        <div id="agency-login-form" style="display: none;">
+            <h2>Car Rental Agency Login</h2>
+            <form id="login-agency-form" action="login.php" method="post">
+                <div class="form-group">
+                    <label for="agency-email">Email:</label>
+                    <input type="email" class="form-control" id="agency-email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="agency-password">Password:</label>
+                    <input type="password" class="form-control" id="agency-password" name="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary"><a href="newcar.html" style="color: white;">Login as Agency</a></button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Car Rental System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="your-custom-script.js"></script>
+</body>
+</html>

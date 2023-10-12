@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency - View Booked Cars</title>
+    <style>
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f5f5f5;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+}
+header {
+    font-size:larger;
+    font-family:cursive;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.buttons {  
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: navy;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 18px;
+    margin-top: 50px;
+
+
+}
+span{
+    background-color: white;
+    color: black;
+    font-family: cursive;
+}
+h1 span {
+            font-weight: bold;
+            font-family: 'Your-Desired-Font', sans-serif; /* Replace 'Your-Desired-Font' with the desired font-family */
+            color: #FF5722; /* Change the color to your desired one */
+        }
+.button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span>HP</span> Car Rent Agency</h1>
+        <h1>Agency - View Booked Cars</h1>
+    </header>
+    <form action="fetch-booked-cars.php">
+    <!-- Car List -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Vehicle Model</th>
+                <th>Vehicle Number</th>
+                <th>Customer Name</th>
+                <th>Booking Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Renault</td>
+                <td>TN 1234</td>
+                <td>hari</td>
+                <td>21-10-2023</td>
+            </tr>
+           
+        </tbody>
+    </table>
+    </form>
+    <div class="buttons">
+        <a href="main.html" class="button">LOGOUT</a>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Car Rental System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script href="agency-view-booked-cars.js">
+    </script>
+</body>
+</html>

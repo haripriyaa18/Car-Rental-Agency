@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental - View Booked Cars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><span>HP</span> Car Rent Agency</h1>
+        <h2>View Booked Cars</h2>
+    </header>
+    <div class="container">
+        <form method="post" action="view-booked-cars.php">
+            <div class="form-group">
+                <label for="car-id">Car ID:</label>
+                <input type="text" name="car_id" id="car-id">
+            </div>
+            <button class="btn btn-primary"><a href="agency-view-booked-cars.html">View Bookings</a></button>
+        </form>
+        <div id="bookings-list">
+            <!-- Bookings will be displayed here -->
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="main.html" class="button">LOGOUT</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Car Rental Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>
