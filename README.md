@@ -35,4 +35,4 @@ A web-based Car Rental Agency system that allows customers to rent cars and car 
 - `database.sql`: SQL file for creating database tables.
 
 ## License
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the (LICENSE).
