@@ -1,26 +1,56 @@
-
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $vehicle_model = $_POST["vehicle_model"];
-    $vehicle_number = $_POST["vehicle_number"];
-    $seating_capacity = $_POST["seating_capacity"];
-    $rent_per_day = $_POST["rent_per_day"];
-    $servername = "localhost"; 
-    $username = "root"; 
-    $password = "";
-    $dbname = "car_rent"; 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $sql = "INSERT INTO car_details (vehicle_model, vehicle_number, seating_capacity, rent_per_day) VALUES ('$vehicle_model', '$vehicle_number', $seating_capacity, $rent_per_day)";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Car details saved successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+include('db-connection.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['action'])) {
+        $action = $_POST['action'];
+
+        if ($action === 'add_car') {
+            $carModel = $_POST['car_model'];
+            $carNumber = $_POST['car_number'];
+            $seatingCapacity = $_POST['seating_capacity'];
+            $rentPerDay = $_POST['rent_per_day'];
+
+            $sql = "INSERT INTO cars (car_model, car_number, seating_capacity, rent_per_day) 
+                    VALUES ('$carModel', '$carNumber', '$seatingCapacity', '$rentPerDay')";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "Car added successfully!";
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+        } elseif ($action === 'update_car') {
+            $carId = $_POST['car_id'];
+            $carModel = $_POST['car_model'];
+            $carNumber = $_POST['car_number'];
+            $seatingCapacity = $_POST['seating_capacity'];
+            $rentPerDay = $_POST['rent_per_day'];
+
+            // Perform SQL update to modify car information
+            $sql = "UPDATE cars 
+                    SET car_model='$carModel', car_number='$carNumber', seating_capacity='$seatingCapacity', rent_per_day='$rentPerDay' 
+                    WHERE id=$carId";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "Car updated successfully!";
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+        } elseif ($action === 'delete_car') {
+            $carId = $_POST['car_id'];
+
+            $sql = "DELETE FROM cars WHERE id=$carId";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "Car deleted successfully!";
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+        }
     }
-    $conn->close();
+} else {
+    echo "Invalid request.";
 }
+mysqli_close($conn);
 ?>
-
